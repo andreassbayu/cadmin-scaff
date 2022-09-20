@@ -15,13 +15,13 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "InfyOm\\GeneratorBuilder\\": "src/"
+          "CadminScaff\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "\\InfyOm\\GeneratorBuilder\\GeneratorBuilderServiceProvider"
+                "\\Andreassbayu\\CadminScaff\\CadmiScaffServiceProvider"
             ]
         }
     }
