@@ -15,14 +15,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-          "CadminScaff\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "\\Andreassbayu\\CadminScaff\\CadmiScaffServiceProvider"
-            ]
+            "vitalis\\HelloWorld\\": "src/"
         }
     }
 }
