@@ -1,0 +1,21 @@
+{
+    "name": "andreassbayu/cadmin-scaff",
+    "description": "Scaffolding for cadmin",
+    "type": "library",
+    "require": {
+      "php": ">=7.2.0"
+    },
+    "license": "proprietary",
+    "authors": [
+      {
+        "name": "Albertus Bayu Aji Priyono",
+        "email": "andreass.bayu@gmail.com"
+      }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+          "CadminScaff\\": "src/CadminScaff/"
+        }
+    }
+}
