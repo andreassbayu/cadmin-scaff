@@ -1,7 +1,8 @@
 <?php
 
-namespace CadminScaff;
+namespace CadminScaff\Generator;
 
+use CadminScaff\Generator\Commands\ScaffPublisherCommand;
 use Illuminate\Support\ServiceProvider;
 
 class CadminScaffServiceProvider extends ServiceProvider
@@ -13,7 +14,7 @@ class CadminScaffServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+
     }
 
     /**
@@ -23,6 +24,12 @@ class CadminScaffServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        $this->app->singleton('scaff.publish.route', function ($app) {
+            return new ScaffPublisherCommand();
+        });
+
+        $this->commands([
+            'scaff.publish.route',
+        ]);
     }
 }

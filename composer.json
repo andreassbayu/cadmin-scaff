@@ -5,7 +5,7 @@
     "require": {
       "php": ">=7.2.0"
     },
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
       {
         "name": "Albertus Bayu Aji Priyono",
@@ -15,7 +15,14 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-          "CadminScaff\\": "src/CadminScaff/"
+            "CadminScaff\\Generator\\": "src/"
         }
-    }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\CadminScaff\\Generator\\CadminScaffServiceProvider"
+            ]
+        }
+    },
 }
