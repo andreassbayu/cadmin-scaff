@@ -1,6 +1,6 @@
 <?php
 
-namespace CadminScaff\Generator;
+namespace AndreassBayu\CadminScaff;
 
 use CadminScaff\Generator\Commands\ScaffPublisherCommand;
 use Illuminate\Support\ServiceProvider;

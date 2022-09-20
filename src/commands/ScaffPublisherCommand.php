@@ -1,6 +1,6 @@
 <?php
 
-namespace CadminScaff\Generator\Commands;
+namespace AndreassBayu\CadminScaff\Commands;
 
 use File;
 use Illuminate\Console\Command;
