@@ -1,6 +1,6 @@
 <?php
 
-namespace AndreassBayu\CadminScaff\Commands;
+namespace InfyOm\GeneratorBuilder\Commands;
 
 use File;
 use Illuminate\Console\Command;
@@ -13,7 +13,7 @@ class ScaffPublisherCommand extends Command
      *
      * @var string
      */
-    protected $name = 'scaff.publish:route';
+    protected $name = 'infyom.publish:generator-builder';
 
     /**
      * The console command description.
@@ -29,7 +29,11 @@ class ScaffPublisherCommand extends Command
      */
     public function handle()
     {
-        echo "tes";
+        if ($this->option('views')) {
+            $this->publishViews();
+        } else {
+            $this->publishRoutes();
+        }
     }
 
     private function publishRoutes()

@@ -1,11 +1,11 @@
 <?php
 
-namespace AndreassBayu\CadminScaff;
+namespace InfyOm\GeneratorBuilder;
 
-use CadminScaff\Generator\Commands\ScaffPublisherCommand;
 use Illuminate\Support\ServiceProvider;
+use InfyOm\GeneratorBuilder\Commands\ScaffPublisherCommand;
 
-class CadminScaffServiceProvider extends ServiceProvider
+class GeneratorBuilderServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
@@ -14,7 +14,13 @@ class CadminScaffServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $configPath = __DIR__.'/../config/generator_builder.php';
 
+        $this->publishes([
+            $configPath => config_path('infyom/generator_builder.php'),
+        ]);
+
+        $this->loadViewsFrom(__DIR__.'/../views/', 'generator-builder');
     }
 
     /**
@@ -24,12 +30,12 @@ class CadminScaffServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('scaff.publish.route', function ($app) {
+        $this->app->singleton('infyom.publish.generator-builder', function ($app) {
             return new ScaffPublisherCommand();
         });
 
         $this->commands([
-            'scaff.publish.route',
+            'infyom.publish.generator-builder',
         ]);
     }
 }
