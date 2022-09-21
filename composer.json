@@ -3,7 +3,7 @@
     "description": "Scaffolding for cadmin",
     "type": "library",
     "require": {
-      "php": ">=7.2.0"
+      "php": ">=7.2.0",
     },
     "license": "MIT",
     "authors": [
@@ -15,7 +15,17 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "vitalis\\HelloWorld\\": "src/"
+            "Andreassbayu\\CadminScaff\\": "src/"
         }
-    }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Andreassbayu\\CadminScaff\\ScaffServiceProvider"
+          ],
+          "aliases": {
+              "Debugbar": "Andreassbayu\\CadminScaff\\Facade"
+          }
+      }
+  }
 }
